@@ -1,0 +1,74 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/Paginas/Home/index.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/Paginas/Home/index.scss" asp-append-version="true" />
+}
+
+<section class="section-page">
+	<div class="container-fluid">
+		<header class="header-page">
+			<h1 class="title-page">Tela Principal</h1>
+		</header>
+
+		<div class="body-page">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="~/img/slider.jpg" alt="Michael Ferreira" title="Michael Ferreira" />
+                        <div class="carousel-caption d-none d-md-block bg-black opacity-75">
+                            <p>
+                                “O livro é uma extensão da memória e da imaginação”
+                            </p>
+                            <h5>Jorge Luís Borges</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="~/img/slider2.jpg" alt="Michael Ferreira" title="Michael Ferreira" />
+                        <div class="carousel-caption d-none d-md-block bg-black opacity-75">
+                            <p>
+                                "O homem que não lê bons livros não tem nenhuma vantagem sobre o homem que não sabe ler"
+                            </p>
+                            <h5>Desconhecido</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="~/img/slider3.jpg" alt="Michael Ferreira" title="Michael Ferreira" />
+                        <div class="carousel-caption d-none d-md-block bg-black opacity-75">
+                            <p>
+                                "A leitura de todos os bons livros é uma conversação com as mais honestas pessoas dos séculos passados"
+                            </p>
+                            <h5>René Descartes</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+@*			<div class="col-md-8 col-lg-6 my-auto text-center">
+				<h1 class="display-3">Biblioteca <span class="text-principal">MCF</span></h1>
+				<p class="font-monospace">
+					A aplicação que vai facilitar o gerenciamento de sua Biblioteca!
+				</p>
+			</div>
+			<div class="col-md-4 col-lg-6 d-none d-md-block">
+				
+			</div>*@
+		</div>
+	</div>
+</section>

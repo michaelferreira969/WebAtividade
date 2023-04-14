@@ -1,0 +1,133 @@
+﻿@{
+	ViewData["Title"] = "Quem Somos";
+}
+
+<link rel="stylesheet" href="~/css/Paginas/Home/index.css" asp-append-version="true" />
+
+<header>
+	<nav class="navbar navbar-expand-md navbar-toggleable-md padrao-bg-one box-shadow mb-3 d-flex justify-content-center fixed-top">
+		<div class="container px-lg-5">
+
+			<a class="navbar-brand mr-10" asp-area="" asp-controller="Home" asp-action="Index">Biblioteca MCF</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa-solid fa-bars text-light"></i>
+				@*<span class="navbar-toggler-icon"></span>*@
+			</button>
+
+			<div class="navbar-collapse collapse">
+				<ul class="navbar-nav flex-grow-1 d-flex justify-content-end">
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+							<i class="fa-solid fa-house"></i> Home
+						</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="QuemSomos">
+							<i class="fa-solid fa-people-group"></i> Quem Somos
+						</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contato">
+							<i class="fa-solid fa-square-phone"></i> Contato
+						</a>
+					</li>
+					<li class="nav-item divisor d-md-block d-none">
+						<!--Divisor-->
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link btn" asp-area="" asp-controller="Login" asp-action="Index">
+							<i class="fa-solid fa-user"></i> Login
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section id="sectionPrincipal" class="padrao-bg-one">
+	<div class="container mt-5 py-4 text-light">
+		<div class="row">
+			<div class="col-md-8 col-lg-6 my-auto text-center">
+				<h1 class="display-3">Quem Somos</h1>
+				<p class="font-monospace">
+					A aplicação que vai facilitar o gerenciamento de sua Biblioteca!
+				</p>
+			</div>
+			<div class="col-md-4 col-lg-6 d-none d-md-block">
+				<img class="img-fluid" src="~/img/capa-michael.png" alt="Michael Ferreira" title="Michael Ferreira" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container mt-5 py-2">
+		<div class="row">
+
+			<div class="col-lg-6 order-lg-2">
+
+				<div class="row mb-2">
+					<h1 class="display-4 padrao-color-two">
+						Porque um sistema?
+					</h1>
+					<p>
+						Vou lher dar agora alguns motivos para ter o nosso sistema de gerenciamento
+						de Biblioteca!
+					</p>
+				</div>
+
+				<div class="row">
+					<h2 class="h4 padrao-color-two">
+						Facilidade no trabalho!
+					</h2>
+					<p>
+						Vou lher dar agora alguns motivos para ter o nosso sistema de gerenciamento
+						de Biblioteca!
+					</p>
+				</div>
+
+				<div class="row">
+					<h2 class="h4 padrao-color-two">
+						Multiplataforma!
+					</h2>
+					<p>
+						Vou lher dar agora alguns motivos para ter o nosso sistema de gerenciamento
+						de Biblioteca!
+					</p>
+				</div>
+
+				<div class="row">
+					<h2 class="h4 padrao-color-two">
+						Segurança!
+					</h2>
+					<p>
+						Vou lher dar agora alguns motivos para ter o nosso sistema de gerenciamento
+						de Biblioteca!
+					</p>
+				</div>
+
+			</div>
+
+			<div class="col-lg-6 order-lg-1">
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<img src="~/img/img-exemplo.jpg" class="img-fluid" alt="Motivo" title="Motivo" />
+					</div>
+					<div class="col-12 col-md-6">
+						<img src="~/img/img-exemplo.jpg" class="img-fluid" alt="Motivo" title="Motivo" />
+					</div>
+				</div>
+				<div class="row pt-4">
+					<div class="col-12 col-md-6">
+						<img src="~/img/img-exemplo.jpg" class="img-fluid" alt="Motivo" title="Motivo" />
+					</div>
+					<div class="col-12 col-md-6">
+						<img src="~/img/img-exemplo.jpg" class="img-fluid" alt="Motivo" title="Motivo" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

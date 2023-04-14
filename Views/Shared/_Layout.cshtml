@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Biblioteca MCF</title>
+
+    <link rel="stylesheet" href="~/favicon.ico" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Biblioteca_MCF.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css/>
+    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css" />
+	<link rel="shortcut icon" type="imagem/png" href="/img/icon-livros.png" />
+	<!-- jQuery DataTable -->
+	<link href="~/lib/jquery-datatables/datatables.min.css" rel="stylesheet" type="text/css">
+	<link href="~/lib/jquery-datatables/DataTables-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+	<!-- jQuery Toast -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" />
+
+	<!--JQuery Mask-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+	@RenderSection("Styles", required: false)
+
+</head>
+<body>
+	<nav class="navbar-lateral navbar-horizontal">
+		<div class="navbar-brand text-center w-100 d-none d-md-block">
+			<a class="text-light" asp-area="" asp-controller="Home" asp-action="Index">
+				<img src="~/img/icon-livros.png" alt="Livros" title="Biblioteca MCF" class="img-fluid" style="max-width: 50px;"/>
+			</a>
+		</div>
+
+		<ul class="navbar-nav flex-grow-1">
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Home" asp-action="Index">
+					<i class="fa-solid fa-house"></i> <br /><span class="d-none d-sm-block">Home</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Usuario" asp-action="Index">
+					<i class="fa-solid fa-people-group"></i> <br /><span class="d-none d-sm-block">Usuários</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Acervo" asp-action="Index">
+					<i class="fa-solid fa-square-phone"></i> <br /><span class="d-none d-sm-block">Acervos</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Solicitacoes" asp-action="Index">
+					<i class="fa-solid fa-user"></i> <br /><span class="d-none d-sm-block">Solicitações</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Avisos" asp-action="Index">
+					<i class="fa-solid fa-bell"></i> <br /><span class="d-none d-sm-block">Avisos</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-color-1" asp-area="" asp-controller="Créditos" asp-action="Index">
+					<i class="fa-solid fa-at"></i> <br /><span class="d-none d-sm-block">Créditos</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+    <main role="main" class="pb-3 main">
+        @RenderBody()
+    </main>
+
+	<footer class="footer text-muted position-bottom mt-2">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                &copy; 2023 - Biblioteca MCF
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/fontawesome/js/all.min.js"></script>
+    <script src="~/lib/fontawesome/js/fontawesome.min.js"></script>
+
+	<!-- jQuery DataTable -->
+	<script src="~/lib/jquery-datatables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script>
+	<script src="~/lib/jquery-datatables/datatables.min.js"></script>
+
+	@RenderSection("Scripts", required: false)
+@*    @await RenderSectionAsync("Scripts", required: false)*@
+</body>
+</html>
+
+<!--<a href="https://www.flaticon.com/br/icones-gratis/biblioteca" title="biblioteca ícones">Biblioteca ícones criados por Luvdat - Flaticon</a>-->

@@ -1,0 +1,102 @@
+﻿@{
+	ViewData["Title"] = "Cadastro de Usuário";
+}
+
+@section Scripts {
+	<script src="~/js/Controllers/Usuario/index.js"></script>
+}
+
+<section class="section-page">
+	<div class="container-fluid">
+
+		<header class="header-page">
+			<div class="">
+				<h1 class="title-page">@ViewBag.titlePage</h1>
+			</div>
+
+			<div class="">
+				<a type="button" class="btn btn-primary btn-md" title="Voltar" asp-controller="Usuario" asp-action="Index">
+					<span class="d-none d-lg-inline">Voltar</span> <span class="d-block d-lg-none"><i class="fa-solid fa-arrow-rotate-left"></i></span>
+				</a>
+			</div>
+		</header>
+
+		<div class="body-page">
+			<div class="">
+				<div class="col-12 col-xl-6">
+					<form>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="iNome">Nome</label>
+								<input type="text" class="form-control" id="iNome" placeholder="Digite o nome">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="iUsername">Username</label>
+								<input type="text" class="form-control" id="iUsername" placeholder="Digite o username">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="iEmail">Email</label>
+								<input type="email" class="form-control" id="iEmail" placeholder="Digite o email">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="iSenha">Senha</label>
+								<input type="password" class="form-control" id="iSenha" placeholder="Digite a senha">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="iCPF">CPF</label>
+								<input type="number" class="form-control" id="iCPF" placeholder="Digite o cpf">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="iDataNascimento">Data de Nascimento</label>
+								<input type="number" class="form-control" id="iDataNascimento" placeholder="Digite a data de nascimento">
+							</div>
+							<div class="form-group">
+								<label for="iNumCelular">Número de Celular</label>
+								<input type="text" class="form-control" id="iNumCelular" placeholder="Digite o número de celular">
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="iEndereco">Endereço</label>
+									<input type="text" class="form-control" id="iEndereco">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="iCidade">Cidade</label>
+									<input type="text" class="form-control" id="iCidade">
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputEstado">Estado</label>
+									<select id="inputEstado" class="form-control">
+										<option selected>Escolher...</option>
+										<option>...</option>
+									</select>
+								</div>
+								<div class="form-group col-md-2">
+									<label for="iCEP">CEP</label>
+									<input type="text" class="form-control" id="iCEP">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheck">
+								<label class="form-check-label" for="gridCheck">
+									Clique em mim
+								</label>
+							</div>
+						</div>
+
+						<button type="button" class="btn btn-primary" id="addUsuario">Cadastrar</button>
+					</form>
+				</div>
+
+				<div class="col-12 col-xl-6">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+

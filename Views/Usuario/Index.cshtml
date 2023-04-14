@@ -1,0 +1,77 @@
+﻿@{
+	ViewData["Title"] = "Usuários";
+}
+
+@section Scripts {
+	<script src="~/js/Controllers/Usuario/index.js"></script>
+	<script src="~/js/Classes/Usuario.js"></script>
+}
+
+<section class="section-page">
+	<div class="container-fluid">
+
+		<header class="header-page">
+			<div class="">
+				<h1 class="title-page">@ViewBag.titlePage</h1>
+			</div>
+
+			<div class="">
+				<a type="button" class="btn btn-primary btn-md" title="Adicionar Usuário" asp-controller="Usuario" asp-action="Cadastro">
+					<span class="d-none d-lg-inline">Adicionar Usuário</span> <span class="d-inline-block"><i class="fa-solid fa-plus"></i></span>
+				</a>
+			</div>
+		</header>
+
+		<div class="body-page">
+
+			<div class="filtro-page"> <!--Inicio da filtro-page-->
+				<div class="row filtro-usuarios">
+					<div class="form-group col-6 col-sm-4 col-md-2 col-lg-1 col-xl-1">
+						<label for="idUsuario">Id</label>
+						<input type="number" class="form-page" id="idUsuario" placeholder="Buscar id..." title="Buscar id">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-3">
+						<label for="name">Nome</label>
+						<input type="text" class="form-page" id="nameUsuario" placeholder="Buscar nome..." title="Buscar nome">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+						<label for="Username">Username</label>
+						<input type="text" class="form-page" id="username" placeholder="Buscar username..." title="Buscar username">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+						<label for="email">Email</label>
+						<input type="email" class="form-page" id="email" placeholder="Buscar e-mail..." title="Buscar e-mail">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-3 mt-md-2 mt-lg-0">
+						<label for="celular">Celular</label>
+						<input type="number" class="form-page" id="celular" placeholder="Buscar celular..." title="Buscar celular">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-3 mt-md-2 mt-lg-0 mt-xl-2">
+						<label for="cpf">CPF</label>
+						<input type="number" class="form-page" id="cpf" placeholder="Buscar CPF..." title="Buscar CPF">
+					</div>
+				</div>
+
+				<div class="row justify-content-end mt-3">
+					<div class="w-25 d-flex justify-content-end">
+						<button type="button" class="btn btn-primary btn-md mx-2" id="filtrarUsuario" title="Filtrar">
+							Filtrar
+						</button>
+						<button type="button" class="btn btn-warning btn-md" title="Limpar Filtro">
+							<i class="fa-solid fa-broom"></i>
+						</button>
+					</div>
+				</div>
+			</div><!--Fim da filtro-page-->
+
+			<div class="line-page"></div>
+
+			<div class="grid-page"> <!--Inicio da grid-->
+				<div id="gridUsuarios">
+					<table id="tbUsuarios">
+					</table>
+				</div>
+			</div> <!--Fim da grid-->
+		</div>
+	</div>
+</section>

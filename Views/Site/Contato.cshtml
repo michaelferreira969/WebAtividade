@@ -1,0 +1,153 @@
+﻿@{
+	ViewData["Title"] = "Contato";
+}
+
+<link rel="stylesheet" href="~/css/Paginas/Home/index.css" asp-append-version="true" />
+
+<header>
+	<nav class="navbar navbar-expand-md navbar-toggleable-md padrao-bg-one box-shadow mb-3 d-flex justify-content-center fixed-top">
+		<div class="container px-lg-5">
+
+			<a class="navbar-brand mr-10" asp-area="" asp-controller="Home" asp-action="Index">Biblioteca MCF</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa-solid fa-bars text-light"></i>
+				@*<span class="navbar-toggler-icon"></span>*@
+			</button>
+
+			<div class="navbar-collapse collapse">
+				<ul class="navbar-nav flex-grow-1 d-flex justify-content-end">
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+							<i class="fa-solid fa-house"></i> Home
+						</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="QuemSomos">
+							<i class="fa-solid fa-people-group"></i> Quem Somos
+						</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contato">
+							<i class="fa-solid fa-square-phone"></i> Contato
+						</a>
+					</li>
+					<li class="nav-item divisor d-md-block d-none">
+						<!--Divisor-->
+					</li>
+					<li class="nav-item mx-2">
+						<a class="nav-link btn" asp-area="" asp-controller="Login" asp-action="Index">
+							<i class="fa-solid fa-user"></i> Login
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section id="Contato">
+	<div class="container mt-5 py-4">
+		<div class="row">
+			<h2 class="display-3">Contato</h2>
+		</div>
+		<div class="row">
+			<h3 class="pb-5 text-center w-100">Como você prefere falar com a gente?</h3>
+		</div>
+
+		<div class="row my-5">
+			<!--Inicio da linha de conteúdo-->
+
+			<div class="col-md-4">
+				<!--Area de email-->
+
+				<h4>E-mail <i class="fa-solid fa-envelope text-danger"></i></h4>
+				<p class="text-justify">
+					Envie um email caso tenha alguma dúvida, estamos à
+					disposição para lhe ajudar!
+				</p>
+				<a href="mailto:meajuda@alemodas.com.br" class="text-spacing-1 h6 padrao-color-two fw-bold" target="_blank"><span>meajuda@alemodas.com.br</span></a>
+
+			</div>
+
+			<div class="col-md-4">
+				<!--Area de telefone-->
+
+				<h4>Telefone <i class="fa-solid fa-phone text-primary"></i></h4>
+				<p class="text-justify">
+					Você pode ligar para o nosso telefone dentro do
+					horário comercial de segunda a sexta.
+				</p>
+				<a href="tel:11953695641" class="text-spacing-1 padrao-color-two fw-bold" target="_blank"><span>(11) 95369-5641</span></a>
+
+			</div>
+
+			<div class="col-md-4">
+				<!--Area de whatsapp-->
+
+				<h4>Whatsapp <i class="fa-brands fa-square-whatsapp text-success"></i></h4>
+				<p class="text-justify">
+					Precisa de atendimento agora? Entre em contato
+					pelo nosso Whatsapp e logo será atendido.
+				</p>
+				<a href="https://wa.me/5511953695641" class="text-spacing-1 h6 padrao-color-two fw-bold" target="_blank"><span>(11) 95369-5641</span></a>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="padrao-bg-one">
+	<div class="container mt-5 py-4 text-light">
+		<div class="row text-center">
+			<h1 class="display-3">Envie direto para o nosso sistema!</h1>
+		</div>
+
+		<div class="row d-flex justify-content-center">
+
+			<div class="w-50">
+
+				<form>
+					<div class="form-row">
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group mt-3">
+							<label for="cidade">Cidade</label>
+							<input type="text" class="form-control" id="cidade">
+						</div>
+						<div class="form-group mt-3">
+							<label for="estado">Estado</label>
+							<select id="estado" class="form-control">
+								<option selected>Escolher...</option>
+								<option>Rio de Janeiro</option>
+								<option>Minas Gerais</option>
+								<option>Santa Catarina</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="my-3">
+						  <label for="text-contato" class="form-label">Escreva Sua Mensagem Aqui</label>
+							<textarea class="form-control" id="text-contato" rows="4"></textarea>
+						</div>
+					</div>
+					<div class="form-group mb-3">
+						<div class="aceitou-termos">
+							<input class="form-check-input" type="checkbox" id="aceitou-termos">
+							<label class="form-check-label" for="aceitou-termos">
+								Concorda com nossa política de privacidade?
+							</label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-light">Enviar</button>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+</section>

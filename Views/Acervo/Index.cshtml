@@ -1,0 +1,182 @@
+﻿@using Biblioteca_MCF.Enums;
+@{
+	ViewData["Title"] = "Acervos";
+}
+
+@section Scripts {
+	<script src="~/js/Controllers/Acervo/index.js"></script>
+}
+
+<section class="section-page">
+	<div class="container-fluid">
+
+		<header class="header-page">
+			<div class="">
+				<h1 class="title-page">Acervos</h1>
+			</div>
+
+			<div class="">
+				@*				<a type="button" class="btn btn-primary btn-md" title="Adicionar Acervo" asp-controller="Acervo" asp-action="Cadastro">
+				<span class="d-none d-lg-inline">Adicionar Acervo</span> <span class="d-inline-block"><i class="fa-solid fa-plus"></i></span>
+				</a>
+				<button type="button" class="btn btn-dark" id="modal-cadastrar">
+					<span class="d-none d-lg-inline">Adicionar Acervo</span> <span class="d-inline-block"><i class="fa-solid fa-plus"></i></span>
+				</button>*@
+				<button type="button" class="btn btn-danger" id="excluir-acervos">
+					Excluir Acervos <i class="fa-solid fa-trash"></i>
+				</button>
+			</div>
+		</header>
+
+		<div class="body-page">
+
+			<div class="">
+				<div class="card p-2" style="background-color:#e7d5ad;">
+					<form>
+						<div class="row">
+
+							<div class="form-group col-xl-4">
+								<label for="iISBN">ISBN</label>
+								<input type="number" class="form-control" id="iISBN" placeholder="Código ISBN">
+							</div>
+							<div class="form-group col-xl-4">
+								<label for="iTitulo">Título</label>
+								<input type="text" class="form-control" id="iTitulo" placeholder="Título do acervo">
+							</div>
+							<div class="form-group col-xl-4">
+								<label for="iAutor">Autor</label>
+								<input type="text" class="form-control" id="iAutor" placeholder="Autor do acervo">
+							</div>
+							<div class="form-group col-xl-4 mt-4">
+								<label for="iAnoPublicacao">Ano de publicação</label>
+								<input type="number" class="form-control" id="iAnoPublicacao" placeholder="Ano de publicação">
+							</div>
+							<div class="form-group col-xl-2 mt-xl-4">
+								<label for="iNumPag">Número de páginas</label>
+								<input type="number" class="form-control" id="iNumPag" placeholder="Número de páginas">
+							</div>
+							<div class="form-group col-xl-2 mt-xl-4">
+								<label for="iNumCap">Número de capítulos</label>
+								<input type="text" class="form-control" id="iNumCap" placeholder="Número de capítulos">
+							</div>
+							<div class="form-group col-xl-2 mt-xl-4">
+								<label for="iTipo">Tipo do livro:</label>
+								<select id="iTipo" name="iTipo" class="form-control">
+									@foreach (var tipo in Enum.GetValues(typeof(TipoAcervoEnum)))
+									{
+										<option value="@((int)tipo)">@tipo</option>
+									}
+								</select>
+							</div>
+							<div class="form-group col-xl-2 mt-xl-4">
+								<label for="iNumExemplares">Número de exemplares</label>
+								<input type="number" class="form-control" id="iNumExemplares" placeholder="Número de exemplares">
+							</div>
+						</div>
+
+						<div class="row justify-content-end mt-4">
+							<div class="form-group d-flex justify-content-end">
+								<button type="button" id="cadastrar-acervo" class="btn btn-md btn-success mx-4" title="Cadastrar">Cadastrar</button>
+								<button type="button" id="limpar" class="btn btn-md btn-warning" title="Limpar campos">Limpar campos</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="filtro-page d-none">
+				<!--Inicio da filtro-page-->
+				<div class="row filtro-usuarios">
+					<div class="form-group col-6 col-sm-4 col-md-2 col-lg-1 col-xl-1">
+						<label for="idAcervo">Id</label>
+						<input type="number" class="form-page btn-sm" id="idAcervo" placeholder="Buscar por id..." title="Buscar id">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-3">
+						<label for="titulo">Título</label>
+						<input type="text" class="form-page btn-sm" id="tituloAcervo" placeholder="Buscar por título..." title="Buscar título">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+						<label for="dataPublicacao">Data de Publicação</label>
+						<input type="text" class="form-page btn-sm" id="dataPulicacao" placeholder="Buscar por data de publicação..." title="Buscar  de publicação">
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+						<label for="statusAcervo">Status acervo</label>
+						<select id="status" name="status" class="form-control">
+							@foreach (var status in Enum.GetValues(typeof(StatusAcervoEnum)))
+							{
+								<option value="@((int)status)">@status</option>
+							}
+						</select>
+					</div>
+					<div class="form-group col-6 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+						<label for="tipoAcervo">Tipo acervo</label>
+						<select id="tipo" name="tipo" class="form-control">
+							@foreach (var tipo in Enum.GetValues(typeof(TipoAcervoEnum)))
+							{
+								<option value="@((int)tipo)">@tipo</option>
+							}
+						</select>
+					</div>
+				</div>
+
+				<div class="row justify-content-end mt-3">
+					<div class="w-25 d-flex justify-content-end">
+						<button type="button" class="btn btn-primary btn-md mx-2" id="filtrarUsuario" title="Filtrar">
+							Filtrar
+						</button>
+						<button type="button" class="btn btn-warning btn-md" title="Limpar Filtro">
+							<i class="fa-solid fa-broom"></i>
+						</button>
+					</div>
+				</div>
+			</div><!--Fim da filtro-page-->
+
+			<div class="line-page"></div>
+
+			<div class="grid-page">
+				<!--Inicio da grid-->
+				<div id="grid-acervos">
+					<table class="table" id="table-acervos">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>ISBN</th>
+								<th>Título</th>
+								<th>Autor</th>
+								<th>Ano <br /> de Publicação</th>
+								<th>Páginas</th>
+								<th>Capítulos</th>
+								<th>Status</th>
+								<th>Tipo</th>
+								<th>...</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+
+				</div>
+			</div> <!--Fim da grid-->
+		</div>
+	</div>
+</section>
+
+@*Modal de Cadastro de acervos*@
+<div id="modalCadastroAcervo" class="modal fade" aria-hidden="true" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Cadastrar Acervo</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-md btn-primary mx-4" title="Cadastrar">Cadastrar</button>
+					<button type="button" class="btn btn-md btn-warning" title="Limpar campos">Limpar campos</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
